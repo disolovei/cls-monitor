@@ -1,0 +1,84 @@
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 18px;
+}
+
+body {
+	background-color: #f7f7f7;
+	padding: 1rem;
+}
+
+.hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+.input-row {
+	position: relative;
+}
+
+.input-row:not(:last-child) {
+	margin-bottom: .5rem;
+}
+
+.input-row label {
+	display: block;
+	cursor: pointer;
+	padding-left: 3rem;
+	position: relative;
+	white-space: nowrap;
+	line-height: 1rem;
+	transition: opacity .3s;
+}
+
+.input-row input[type="checkbox"] + label > .control {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2.5rem;
+	height: 1rem;
+	border-radius: 1rem;
+	background-color: white;
+	transition: background-color ease .3s, box-shadow ease .3s;
+	border: .12rem solid tomato;
+	box-shadow: inset 0 0 5px #ececec;
+}
+
+.input-row input[type="checkbox"]:disabled + label {
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.input-row input[type="checkbox"] + label > .control:before {
+	content: '';
+	display: block;
+	width: .64rem;
+	height: .64rem;
+	border-radius: 50%;
+	display: block;
+	position: absolute;
+	top: .05rem;
+	left: .05rem;
+	background-color: tomato;
+	transition: transform ease .3s, background-color ease .3s, box-shadow ease .3s;
+	will-change: transform;
+}
+
+.input-row input[type="checkbox"]:checked + label > .control {
+	background-color: tomato;
+	box-shadow: inset 0 0 0 #ececec;
+}
+
+.input-row input[type="checkbox"]:checked + label > .control:before {
+	transform: translateX(1.54rem);
+	background-color: white;
+} 
